@@ -29,7 +29,6 @@ urlpatterns = [
     path('api/', include('site_meta.urls')),
     path('api/', include('customer.urls')),
     path('api/account/', include('account.urls')),
-    path('api/', include('recommendation.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('auth/', obtain_auth_token),
 
