@@ -1,0 +1,13 @@
+Rules on attributes for each of the following classes
+-----------------------------------------------------
+
+1. Product
+
+i. Product creater must be one of ['admin', 'site_owner'] but not customer
+ii. Tax Rate is dependent on Product Price or Featured Price
+iii. Product price, featured price, discount percentage and inventory unit must be >= 0
+iv. discount percentage <= 100
+v. Featured price is calculated based on product price, Discount and Tax
+        Featured price = (Product Price - Discount) + Tax
+
+2. 

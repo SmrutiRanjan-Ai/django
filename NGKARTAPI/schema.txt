@@ -1,0 +1,95 @@
+product:-
+
+Product id - key - unique
+description
+feautured_image=(one of images)
+customizable=bool #Not nullable
+price= #Not nullable
+launch_date=
+inventory=numbers
+inventory_unit=  # Not nullable e.g kg, cm, pieces
+product_creator=foriegn key ( user id) #Not nullable
+featured price= 
+discount percentage=
+shipping_rate=
+if flat shipping
+tax_code=#foriegn key ( tax_id) Not nullable
+categories=list of ids #foriegn key ( category id) Not nullable
+
+images=list of hyperlinks
+attributes=dictionary{(attributes name):(list of attributes value)}# for example tshirt color - attribute name, red,yellow green, attribute values
+
+--------------------------------------------------------------------------------------------------------------
+
+categories:-
+id - key - unique
+description
+feautured_image=one image link only
+parent_category_id=#foriegn key ( category id) nullable !important that it is nullable
+
+tags =list of words
+
+-----------------------------------------------------------------------------------------------------------------
+orders:
+id - key - unique #Not nullable
+shipping_rate=(sum of shipping_rate of product ids)
+flat_shipping=
+customer_id=foriegn key ( user id) #Not nullable
+order_date_time=#Not nullable
+status=one of (confirmed,processing,pending,cancelled,shipped)
+shiiping_address_id=
+
+order_items
+-----------------------------------------------------------------------------------------------------------------
+items= List of (Product ids,price,number,inventory_unit,customizable_image(nullable),customizable_text(Nullable) #Not nullable also product id is foriegn key
+
+-----------------------------------------------------------------------------------------------------------------
+tax_id:-
+id - key - unique
+tax_name - #Not nullable
+tax_rate - #Not nullable
+-----------------------------------------------------------------------------------------------------------------
+shiping_address:-
+shiping_address_id=key - unique
+shipping_address_line_1=#Not nullable
+shipping_address_line_2=
+shipping_address_state=#Not nullable
+shipping_address_country=#Not nullable
+shipping_address_pincode=#Not nullable
+shipping_address_phone=#Not nullable
+-----------------------------------------------------------------------------------------------------------------
+site_meta_data:-
+site_title=#Not nullable
+site_flat_shipping=#Not nullable
+site_flat_shipping_limit=
+if cod allowed =bool #Not nullable
+site_address_line_1=#Not nullable
+site_address_line_2=#Not nullable
+shipping_address_state=#Not nullable
+shipping_address_country=#Not nullable
+shipping_address_pincode=#Not nullable
+site_terms_condition=#Not nullable
+site_facebook_link=
+site_twitter_link=
+shipping_address_phone=list of phone numbers #Not nullable
+site_featured_products=list of products #Not nullable
+
+site_slideshow=(list of (image_links,image_titles)) #Not nullable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

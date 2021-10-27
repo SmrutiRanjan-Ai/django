@@ -1,0 +1,107 @@
+1. Create Virtual Environment
+---------------------------------
+python -m venv environment_name
+
+2. Activate Virtual Environment
+---------------------------------
+env_name\Scripts\activate
+
+3. Creating a Django project
+------------------------------
+pip install django
+pip install djangorestframework
+django-admin startproject project_name
+
+4. Open VS code
+----------------
+cd project_name
+code .
+
+5. Install corsheader, djoser for authentication
+-------------------------------------------------
+pip install django-cors-headers
+pip isnatll djoser
+
+6. Install Pillow for using ImaeField in Django models
+--------------------------------------------------------
+python -m pip install Pillow
+
+7. Run project server
+----------------------------
+python manage.py runserver
+copy the url in browser
+
+8. Create Django app
+-----------------------
+python manage.py startapp app_name
+
+9. Register installed apps in settings.py
+-------------------------------------------
+Update INSTALLED_APPS to add app, rest_framework, corsheaders, djoser
+Update MIDDLEWARE to add CorsMiddleware just above the CommonMiddleware (Yes, order matters)
+Add CORS_ALLOWED_ORIGINS
+
+10. Create Models
+--------------------
+Create file models.py inside the app folder app_name
+Create class for each table you wish to create for this app
+Add model inside admin.py
+
+11. Migrate models
+--------------------
+cd app_name
+python manage.py makemigrations
+python manage.py migrate
+
+12. Register your model in admin.py
+--------------------------------------
+admin.site.Register(Product) 
+
+13. Create View and Url for the app 
+-------------------------------------
+Create views.py and urls.py inside the app app_name
+
+14. Create superuser
+--------------------
+python manage.py createsuperuser
+
+15. Create serializer for your models
+---------------------------------------
+create a file serializer.py in app_name
+create a class specifying serialization for each of your models
+
+16. Add a media folder inside your app_name folder
+----------------------------------------------------
+Change settings.py to include the media folder
+
+17. Basic operations on query-set
+----------------------------------
+i. Fetch all products
+        Product.objects.all()
+
+ii. Fetch a single product
+        Product.objects.get(ID=id)
+        Product.objects.get(NAME=)
+        
+iii. Fetch/Fiter multiple products
+        Products.objects.filter(category='Summer')
+
+iv. Order products by a attribute value
+        Products.objects.all().order_by('id')
+        Products.objects.all().order_by('-id')
+
+v. Fetch all the orders of a given customer
+        Here Customer is a foreign key in Order model
+        Fetch the customer
+            customer = Customer.objects.get(CustomerId=id)
+        Fetch all orders for that customer
+            orders = customer.order_set.all()
+        OR
+        orders = Orders.objects.filter(Customer=id)
+
+vi. Filter on multiple attributes
+        Product.objects.filter(category='Summer', name='some name')
+
+vii. Filter products based on attribute with many to many relationship
+     Ex Filter products with a particular tag(s) name
+        Product.objects.filter(tags__name='Sports')

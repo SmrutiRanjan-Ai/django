@@ -1,0 +1,87 @@
+Types of users: Superuser(Admin), Site Owners, Customers
+
+User groups: site_owner
+
+Test Users
+
+   Username             Passowrd           Group        IsActive    IsStaff     SuperUser
+1. admin                root@123           None         True        True        True
+2. testsiteowner1       sampleowner@1      site_owner   True        True        False         
+3. testsiteowner2       sampleowner@2      site_owner   True        True        False
+4. testcustomer1        samplecust@1       customer     True        False       False
+5. testcustomer2        samplecust@2       customer     True        False       False
+
+Tokens
+1. admin
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzNDQyNDYzNSwianRpIjoiMDdlNjc1MWE3YThiNDA3Yjk2NDJmNzRlMjI2ODQ2MjQiLCJ1c2VyX2lkIjoxfQ.ArUQjWKjILhuDbZcNS3tUjEcSEibG2ZFZn9l5E6iRzM",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM0MzM4NTM1LCJqdGkiOiIwOWViYmNhNGNjZWU0MWY4ODAzMTYyNDI2MmI1OGE1ZiIsInVzZXJfaWQiOjF9.VRvFb0VnnkuIJ7oTqav2U334ZapOJpz887AUnuG4ZRw"
+}
+
+2. testsiteowner1
+
+{
+    "status": "success",
+    "user_id": 2,
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYzNDQyNjg3NywianRpIjoiMWVkMTk3MDNmYzEzNDIxNDhlNGEwZTgyMjllNDdmZTIiLCJ1c2VyX2lkIjoyfQ.KKJvBNhSB10_t6OtQVjLcMi0Fz1M3ydBn8DOhC6-SyE",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM0MzQwNzc3LCJqdGkiOiIxYjk0MGEzMWZhNDk0YjI5YWMwMTdmOWE0ZTliOGEwNCIsInVzZXJfaWQiOjJ9.46FRtdmqleC4liMawAC4KgWElTH6aIoi9wivzFSPi4U"
+}
+
+{
+        "ProductName": "Temp",
+        "ProductSlug": "temp",
+        "ProductDescription": "",
+        "ProductFeaturedImageFile": null,
+        "ProductIsCustomizable": false,
+        "ProductPrice": "1000.00",
+        "ProductLaunchDate": "2021-10-17T11:16:35.665457Z",
+        "ProductInventory": 50,
+        "ProductInventoryUnit": "PC",
+        "ProductFeaturedPrice": 500,
+        "ProductDiscountPercentage": 50,
+        "ProductShippingRate": 0,
+        "ProductFlatShipping": false,
+        "ProductCreater": 2,
+        "ProductTaxCode": 1,
+        "ProductCategories": [
+            3
+        ],
+        "ProductTags": [
+            1,
+            2
+        ]
+}
+
+11	Temp2			0	1000	2021-10-17 15:30:43.047452	50	PC	500	50	0	0	2	1	temp2
+10	Temp			0	1000	2021-10-17 15:27:43.263605	50	PC	500	50	0	0	2	1	temp
+1	Men Regular Fit Checked Casual Shirt			0	1000	2021-10-17 11:13:13.163206	100	PC	600	40	5	0	2	1	regchkcasualsrt
+2	Men Navy Blue & Grey Standard Fit Colourblocked Casual Shirt			0	1500	2021-10-17 11:15:00.290021	0	PC	1200	20	10	0	2	1	stdclbcasualsrt
+3	Men Black Slim Fit Solid Formal Shirt			0	1000	2021-10-17 11:16:35.665457	50	PC	500	50	0	0	2	1	slmsldformalsrt
+
+Sample Order
+-------------
+
+{
+    "OrderShippingRate": 5,
+    "OrderFlatShipping": false,
+    "OrderDateTime": null,
+    "OrderStatus": "PROCESSING",
+    "OrderCustomerId": 3,
+    "OrderShippingAddress": 1,
+    "OrderItems" : [
+        {
+            "ProductId" : 2,
+            "ProductQuantity" : "5"
+        },
+        {
+            "ProductId" : 1,
+            "ProductQuantity" : 3
+        }
+    ]
+}
+
+{
+    "ProductQuantity": 1,
+    "OrderId": 14,
+    "ProductId": 1
+}

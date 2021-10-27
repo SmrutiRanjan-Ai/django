@@ -1,0 +1,30 @@
+Sample Order
+
+{
+    "OrderShippingRate": 10,
+    "OrderFlatShipping": false,
+    "OrderCustomerId": 4,
+    "OrderDateTime":  "2021-10-12T16:47:39.055420Z",
+    "OrderStatus": "PROCESSING",
+    "OrderShippingAddress": "1",
+    "OrderTotal": 1000,
+    "OrderItems": [
+        {
+            "ProductId": 1,
+            "ProductQuantity":2,
+            "ProductInventoryUnit":"PC",
+            "ProductTotalCost":900,
+            "ProductCustomizableImage":null,
+            "ProductCustomizableText":null
+
+        },
+        {
+            "ProductId": 3,
+            "ProductQuantity":1,
+            "ProductInventoryUnit":"PC",
+            "ProductTotalCost":599,
+            "ProductCustomizableImage":null,
+            "ProductCustomizableText":null
+        }
+    ]
+}
